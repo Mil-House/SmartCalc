@@ -156,95 +156,7 @@ function calculateItemTotalCost(item) {
     };
 
   }
-  // return item.price * item.quantity;
 }
-
-// Для расчета общей суммы объекта AMD/USD (также добавляет NaN если не указан курс USD)
-// function calculateItemTotalCost(item) {
-//   if (selectedCurrency === 'AMD') {
-//     const unitPriceDram = item.price;
-//     const itemCostInDram = unitPriceDram * item.quantity;
-//     const itemCostInUSD = usdRate ? itemCostInDram / usdRate : NaN;
-
-//     return {
-//       selectedPrice: unitPriceDram,
-//       dram: itemCostInDram.toFixed(2),
-//       usd: !isNaN(itemCostInUSD) ? itemCostInUSD.toFixed(2) : 'NaN'
-//     };
-//   } else if (selectedCurrency === 'USD') {
-//     const unitPriceUSD = item.price;
-//     const itemCostInUSD = unitPriceUSD * item.quantity;
-//     const itemCostInDram = usdRate ? unitPriceUSD * usdRate * item.quantity : NaN;
-
-//     return {
-//       selectedPrice: unitPriceUSD,
-//       usd: itemCostInUSD.toFixed(2),
-//       dram: !isNaN(itemCostInDram) ? itemCostInDram.toFixed(2) : 'NaN'
-//     };
-//   }
-// }
-
-//____________________________________________________________________________
-
-// function calculateItemTotalCost(item) {
-
-//   if (selectedCurrency === 'USD') {
-//     const unitPriceUSD = item.price;
-
-//     const itemCostInUSD = unitPriceUSD * item.quantity;
-//     const itemCostInDram = usdRate ? unitPriceUSD * usdRate * item.quantity : NaN;
-
-//     return {
-//       selectedPrice: unitPriceUSD,
-//       usd: itemCostInUSD.toFixed(2),
-//       dram: !isNaN(itemCostInDram) ? itemCostInDram.toFixed(2) : 'NaN'
-//     };
-
-//   } else if (selectedCurrency === 'AMD') {
-//     const unitPriceDram = item.price * usdRate;
-
-//     const itemCostInDram = unitPriceDram * item.quantity;
-//     const itemCostInUSD = item.price * item.quantity;
-
-//     return {
-//       selectedPrice: unitPriceDram,
-//       dram: itemCostInDram.toFixed(2),
-//       usd: !isNaN(itemCostInUSD) ? itemCostInUSD.toFixed(2) : 'NaN'
-//     };
-
-//   }
-// }
-
-// // Для расчета общей суммы объекта AMD/USD (также добавляет NaN если не указан курс USD)
-// function calculateItemTotalCost(item) {
-//   let selectedItemPrice = item.price;
-//   if (selectedCurrency === 'AMD') {
-//     selectedItemPrice = item.price;
-//   }
-//   // return item.price * item.quantity;
-//   const itemCostInDram = item.price * item.quantity;
-//   const itemCostInUSD = usdRate ? itemCostInDram / usdRate : NaN;
-//   return {
-//     selectedPrice: selectedItemPrice, // added
-//     dram: itemCostInDram.toFixed(2),
-//     usd: !isNaN(itemCostInUSD) ? itemCostInUSD.toFixed(2) : 'NaN'
-//   };
-// }
-// function calculateItemTotalCostUSD(item) {
-//   let selectedItemPrice = item.price;
-//   if (selectedCurrency === 'USD') {
-//     selectedItemPrice = item.price / usdRate;
-//   }
-//   // return item.price * item.quantity;
-//   const itemCostInUSD = item.price * item.quantity;
-//   const itemCostInDram = usdRate ? item.price * usdRate : NaN;
-//   return {
-//     selectedPrice: selectedItemPrice, // added
-//     usd: itemCostInUSD.toFixed(2),
-//     dram: !isNaN(itemCostInDram) ? itemCostInDram.toFixed(2) : 'NaN'
-//   };
-// }
-
 
 
 /*----========--------======== EDIT ========--------========----*/
@@ -283,13 +195,8 @@ function deleteItem(index) {
 // /*----========--------======== Calculate Total Cost ========--------========----*/
 function calculateTotalCost() {
   const totalCostElement = document.getElementById("totalCost");
-  // let totalCost = 0;
   let totalCostDram = 0;
   let totalCostUSD = 0;
-
-  // items.forEach((item) => {
-  //   totalCost += calculateItemTotalCost(item);
-  // });
 
   // dobavili dlya USD
   if (selectedCurrency === 'USD') {
@@ -300,7 +207,6 @@ function calculateTotalCost() {
       totalCostDram += usdRate ? unitPriceUSD * usdRate * item.quantity : NaN; // Установка в NaN, если usdRate не определен
     });
 
-    //<div class="totalcost-item">AMD: ${totalCostDram.toFixed(2)}֏</div>
     totalCostElement.innerHTML = 
     `
      <div class="totalcost-item">USD: ${totalCostUSD.toFixed(2)}$</div>
@@ -314,7 +220,6 @@ function calculateTotalCost() {
       totalCostUSD += usdRate ? item.price * item.quantity : NaN; // Вычисляем общую стоимость в USD
     });
 
-    // <div class="totalcost-item">USD: ${totalCostUSD.toFixed(2)}$</div>
     totalCostElement.innerHTML = 
     `
     <div class="totalcost-item">AMD: ${totalCostDram.toFixed(2)}֏</div>
@@ -322,50 +227,6 @@ function calculateTotalCost() {
     `;
   }
 }
-
-/*----========--------======== Calculate Total Cost ========--------========----*/
-// function calculateTotalCost() {
-//   const totalCostElement = document.getElementById("totalCost");
-//   // let totalCost = 0;
-//   let totalCostDram = 0;
-//   let totalCostUSD = 0;
-
-//   // items.forEach((item) => {
-//   //   totalCost += calculateItemTotalCost(item);
-//   // });
-
-//   // dobavili dlya USD
-//   if (selectedCurrency === 'AMD') {
-//     items.forEach((item) => {
-//       // totalCost += item.price * item.quantity;
-//       totalCostDram += item.price * item.quantity;
-//       totalCostUSD += usdRate ? item.price * item.quantity / usdRate : NaN; // Вычисляем общую стоимость в USD
-//     });
-
-//     // <div class="totalcost-item">USD: ${totalCostUSD.toFixed(2)}$</div>
-//     totalCostElement.innerHTML = 
-//     `
-//     <div class="totalcost-item">AMD: ${totalCostDram.toFixed(2)}֏</div>
-//     <div class="totalcost-item">USD: ${isNaN(totalCostUSD) ? 'NaN' : totalCostUSD.toFixed(2)}$</div>
-//     `;
-//   }
-//   if (selectedCurrency === 'USD') {
-//     items.forEach((item) => {
-//       // totalCost += item.price * item.quantity;
-//       totalCostUSD += item.price * item.quantity;
-//       totalCostDram += usdRate ? item.price * usdRate : NaN; // Установка в NaN, если usdRate не определен
-//     });
-  
-//     //<div class="totalcost-item">AMD: ${totalCostDram.toFixed(2)}֏</div>
-//     totalCostElement.innerHTML = 
-//     `
-//      <div class="totalcost-item">USD: ${totalCostUSD.toFixed(2)}$</div>
-//      <div class="totalcost-item">AMD: ${isNaN(totalCostDram) ? 'NaN' : totalCostDram.toFixed(2)}֏</div>
-//     `;
-//   }
-// }
-
-
 
 
 /*----========--------======== USD COURSE ========--------========----*/
@@ -392,8 +253,6 @@ document.getElementById("usdRate").addEventListener('change', function() {
 });
 
 
-
-
 // ---=== Предупреждение что после перезагрузки данные исчезнут ===---
 window.addEventListener('beforeunload', function(event) {
   if (hasUnsavedData) {
@@ -404,25 +263,8 @@ window.addEventListener('beforeunload', function(event) {
 });
 
 
-
-
-/*----========--------======== HAMBURGER SELECT MENU ========--------========----*/
-// document.addEventListener('DOMContentLoaded', function() {
-//   const pageSelect = document.getElementById('page-select');
-
-//   // Обработчик события изменения выбора
-//   pageSelect.addEventListener('change', function() {
-//     const selectedPage = pageSelect.value;
-//     if (selectedPage) {
-//       window.location.href = selectedPage; // Переход на выбранную страницу
-//     }
-//   });
-// });
-
-
 /*----========--------======== HELPER ========--------========----*/
 document.addEventListener('DOMContentLoaded', function() {
-  // const navHelp = document.querySelector('.nav-help');
   const helperBtn = document.querySelector('.helper-btn');
   const helperText = document.querySelector('.helper');
 
@@ -433,15 +275,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (helperText.classList.contains('show-helper')) {
       helperBtn.textContent = 'X'; // Изменение текста кнопки на "X", если помощь отображается
       helperBtn.classList.add('close-helper'); // Добавление класса для стилизации кнопки закрытия
-
-      // navHelp.style.backgroundColor = '#15a545';
-      // navHelp.style.color = '#ffffff';
     } else {
       helperBtn.textContent = 'Help'; // Иначе изменение текста кнопки на "Help"
       helperBtn.classList.remove('close-helper'); // Удаление класса, если блок помощи скрыт
-
-      // navHelp.style.backgroundColor = ''; // Сброс стилей при скрытии помощи
-      // navHelp.style.color = ''; // Сброс стилей при скрытии помощи
     }
   });
 });
