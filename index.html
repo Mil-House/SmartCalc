@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--======== Web wallpaper ========-->
+  <meta property="og:title" content="SmartCalc"/>
+  <meta property="og:image" content="https://Mil-House.github.io/SmartCalc/assets/img/SamrtCalc_webcover.png"/>
+  <meta property="og:description" 
+  content="SmartCalc will help you easily, fast and simply view all your expenses. 
+  You can also adjust the currency exchange rate and get the price you need in another currency."/>
+
+  <!--======== CSS Styles ========-->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <title>SmartCalc AMD-USD</title>
+
+  <!--======== FAVICON ========-->
+  <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon" />
+
+  <!-- User scale and manifest -->
+  <meta name="apple-mobile-web-app-capable" content="yes"><!-- Json & zoom in ignore -->
+  <link rel="manifest" href="./assets/manifest.json">
+  <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+
+  <!-- App Icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/appicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/appicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/appicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/appicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/appicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/appicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/appicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/appicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/appicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./assets/img/appicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/appicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/appicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/appicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/img/appicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./assets/img/appicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Splash screens -->
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-link-container">
+      <div class="nav-link active-link">AMD-USD</div>
+      <div class="nav-link"><a href="indexAMD.html">AMD</a></div>
+      <div class="nav-link"><a href="indexUSD.html">USD</a></div>
+    </div>
+
+    <div class="nav-help">
+      <div class="helper-btn">Help</div>
+    </div>
+  </nav>
+  <div class="calculator">
+
+    <p class="helper">
+      При режиме AMD-USD вы можете вводить цену независимо от того, 
+      это AMD или USD.</br>
+      Если вы напишите цену в AMD, 
+      то же число можно посмотреть как USD (если указать тип USD).</br></br>
+      <span style="font-weight: 600;">
+        Также не забывайте указать нынешний курс USD!
+      </span>
+    </p>
+
+    <div class="logo">
+      <img src="./assets/img/logo_48.png" alt="">
+      <h1>SmartCalc</h1>
+    </div>
+
+    <div class="input-section">
+
+      <div class="flexsection">
+        <div class="flex-item">
+          <label for="itemName">Անուն:</label><!--Навание объекта:-->
+          <input type="text" id="itemName" class="input_style" placeholder="Ապրանքի անուն" required><!--Object name-->
+        </div>
+
+        <div class="flex-item">
+          <label for="itemQuantity">Քանակ:</label><!--Количество:-->
+          <input type="number" id="itemQuantity" min="0" class="input_style" placeholder="Քանակ" required><!--Quantity-->
+        </div>
+      </div>  
+
+      <div class="flexsection">
+        <div class="flex-item flex-price">
+          <label for="itemPrice">Գին AMD-USD:</label><!--Цена за 1 шт.:-->
+          <input type="number" id="itemPrice" min="0" step="0.01" class="input_style" placeholder="Ապրանքի գին" required><!--Object price-->
+        </div>
+
+        <div class="flex-item flex-type">
+          <label for="currency">Տիպ:</label><!--Выберите валюту: | Тип:-->
+          <select id="currency" class="input_style" onchange="changeCurrency()">
+            <option value="AMD">AMD</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+
+        <div class="flex-item flex-usdrate">
+          <label for="usdRate">Արժ USD:</label><!--Выберите валюту: | Курс USD:-->
+          <input type="number" id="usdRate" min="0" step="0.01" class="input_style" placeholder="USD rate">
+        </div>
+      </div>
+
+      <!-- <div class="flex-item">
+        <label for="itemComment">Комментарий (необязательно):</label>
+        <input type="text" id="itemComment" class="input_style" placeholder="Comment...">
+      </div> -->
+      <div class="flex-item">
+        <label for="itemComment">Մեկնաբանություն (ըստ ցանկության):</label><!--Комментарий (необязательно)-->
+        <textarea id="itemComment" class="textarea_style" placeholder="Մեկնաբանություն..."></textarea><!--Comment...-->
+      </div>      
+      
+      <button onclick="addItem()">Ավելացնել</button><!--Добавить-->
+    </div>
+
+    <div class="item-list">
+      <h2>Ապրանքների ցանկ:</h2><!--Список объектов:-->
+      <ul id="itemList"></ul>
+      <div class="total-cost">Ընդհանուր արժեքը <!--Итоговая стоимость-->
+        <div class="obj_totalcost">
+          <span id="totalCost">AMD / USD</span>
+        </div>
+      </p>
+    </div>
+  </div>
+
+  <script src="./assets/js/calculator-USD-AMD.js"></script>
+</body>
+</html>

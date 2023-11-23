@@ -1,0 +1,485 @@
+/*----========--------======== GOOGLE FONTS ========--------========----*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap'); /*font-family: 'Zen Dots', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400&display=swap'); /*font-family: 'Noto Sans Armenian', sans-serif;*/
+
+
+/*----========--------======== BASE ========--------========----*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {font-family: "Inter", sans-serif;} */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li { 
+  list-style: none; 
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}  
+
+img, button { 
+  display: block; 
+}
+
+a, span { 
+  display: inline-block; 
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+/*---------- ---------- Nav Link Menu and Help ---------- ----------*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #fff; */
+  padding: 0 10px 0 10px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.nav-link-container {
+  display: flex;
+}
+
+.nav-help,
+.nav-link {
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #eee;
+  /* padding: 2px 4px; */
+  max-width: 100px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #1f6bdb;
+  color: white;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #222;
+  padding: 2px 4px;
+}
+
+.helper-btn{
+  padding: 2px 4px;
+}
+
+.nav-link:hover > a {
+  color: white;
+  text-decoration: underline;
+}
+
+.nav-help:hover {
+  background-color: #15a545;
+  color: white;
+  cursor: help;
+}
+
+.active-link {
+  padding: 2px 4px;
+  background: #154fa5;
+  color: white;
+  cursor: default;
+}
+.active-link:hover {
+  background: #154fa5;
+}
+
+.helper {
+  text-align: justify;
+  font-style: italic;
+  background-color: rgba(73, 248, 79, 0.2);
+  border: 1px solid #15a545;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: .91rem;
+}
+
+.helper {
+  display: none; /* По умолчанию скрываем текст помощи */
+}
+
+.show-helper {
+  display: block; /* Показываем текст помощи при активации */
+}
+
+/* Добавьте стили для кнопки закрытия (когда помощь отображается) */
+.close-helper {
+  font-style: normal;
+  cursor: pointer;
+  padding: 2px 16px;
+  background-color: #15a545;
+  border-radius: 4px 4px 0px 0px;
+  color: white;
+}
+
+
+/*---------- ---------- Calculator and main styles ---------- ----------*/
+.calculator {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.logo img{
+  width: 38px;
+  height: 38px;
+  margin: 0 8px 14px 0;
+
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Zen Dots', sans-serif;
+  color: #222;
+  margin: 12px 0 24px 0;
+  text-align: center;
+}
+
+.input-section label,
+.input-section input,
+.input-section button {
+  width: 100%;
+  /* margin-bottom: 10px; */
+}
+
+/*---------- ---------- Label and Input ---------- ----------*/
+label{
+  font-style: italic;
+  margin-top: 16px;
+
+  background-color: rgba(3, 4, 18, 0.76);
+  border-radius: 3px 3px 0 0;
+  color: white;
+  padding: 2px;
+}
+
+.input_style {
+  padding-left: 8px;
+  border: 1px solid #cccccc;      /* цвет рамки */
+  border-radius: 0 3px 3px 3px;     /* закругление углов */
+  background: #ffffff !important; /* фоновый цвет */
+  outline: none;                    /* удаляет обводку в браузерах хром и сафари */
+  height: 32px;                     /* высота на свое усмотрение */
+  font-size: .95rem;
+  color: rgb(70, 70, 70);
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.input_style:focus {
+  color: rgb(22, 22, 22); /* цвет текста при фокусе */
+  border-color: #0f6fff;
+}
+
+/*---------- ---------- Comment style ---------- ----------*/
+.textarea_style{
+  font-size: .95rem;
+  min-width: 100%;
+  max-width: max-content;
+  height: auto;
+  padding: 6px 8px 6px 6px;
+
+  border: 1px solid #cccccc;      /* цвет рамки */
+  border-radius: 0 3px 3px 3px;     /* закругление углов */
+  background: #ffffff !important; /* фоновый цвет */
+  outline: none;                    /* удаляет обводку в браузерах хром и сафари */
+  color: rgb(70, 70, 70);
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.textarea_style:focus {
+  color: rgb(22, 22, 22); /* цвет текста при фокусе */
+  border-color: #0f6fff;
+}
+
+/*---------- ---------- Flex Input Column ---------- ----------*/
+.flexsection {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.flex-item {
+  flex: 1; /* равномерное распределение пространства между flex-items */
+}
+
+.flex-price {
+  flex: 2; /* первый элемент будет занимать 2/4 или 50% пространства */
+}
+
+.flex-type,
+.flex-usdrate {
+  flex: 0.9; /* второй и третий элементы будут занимать по 1/4 или 25% пространства каждый */
+}
+
+.flex-item label {
+  margin: 0;
+}
+
+.flex-usdrate label {
+  /* text-overflow: ellipsis; */
+  text-wrap: nowrap;
+}
+
+.flex-item .input_style {
+  margin: 0;
+  width: 100%; /* ширина input будет равной ширине блока, который его содержит */
+}
+
+
+/*---------- ---------- ---------- ---------- ----------*/
+
+.input-section button {
+  margin: 16px 0;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px -3px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.input-section button:hover {
+  background-color: #45a049;
+}
+
+.item-list {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.item-list h2 {
+  margin: 10px 0;
+  color: #252525;
+}
+
+.item-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.item-list li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.item-list li .item-name {
+  font-weight: bold;
+}
+
+/*---------- ---------- Object View Styles ---------- ----------*/
+.item-list li {
+  box-shadow: 
+  rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, 
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, 
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.obj_name,
+.amount,
+.max_price,
+.comment {
+  border-bottom: 1px solid silver;
+}
+
+.obj_options{
+  font-style: italic;
+  background-color: rgba(3, 4, 18, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 2px;
+}
+
+.obj_nums{
+  margin-left: 2px;
+  font-weight: bold;
+  color: #222;
+}
+
+/*---------- ---------- Object Name ---------- ----------*/
+.obj_name {
+  padding: 6px 0;
+}
+
+/*---------- ---------- Amount / Amount items ---------- ----------*/
+.amount {
+  display: flex;
+  justify-content: flex-start;
+  margin: 8px 0;
+  padding: 6px 0;
+    /* border-top: 1px solid #239262;
+    border-bottom: 1px solid #239262; */
+  /* gap: 6px; */
+}
+/* 
+.amount .amount-item {
+  padding: 3px;
+  border: 2px solid #acacac;
+  border-radius: 6px;
+} */
+
+.amount .amount-item:first-child {
+  padding-right: 20px;
+}
+
+.amount .amount-item:last-child {
+  border-left: 2px solid silver;
+  padding-left: 20px;
+}
+
+/*---------- ---------- Max Price ---------- ----------*/
+.max_price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 6px 0;
+}
+
+/*---------- ---------- Comment ---------- ----------*/
+.comment {
+  margin: 8px 0;
+  padding: 6px 0;
+  /* padding: 6px 8px; */
+  /* background-color: #cccccc82; */
+    /* border-top: 1px solid #239262;
+    border-bottom: 1px solid #239262; */
+  /* border-radius: 4px; */
+}
+
+/*---------- ---------- Edit Button ---------- ----------*/
+.item-list li .obj_btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.item-list li button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.item-list li button:hover {
+  background-color: #e53935;
+}
+
+/*---------- ---------- Total Cost/Digit ---------- ----------*/
+.total-cost {
+  padding: 8px 16px;
+  background-color: #cccccc82;
+  border: 2px solid rgba(6, 24, 44, 0.65);
+  /* border: 2px dashed #03041390; */
+  border-radius: 4px;
+  text-align: center;
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+#totalCost {
+  font-weight: bold;
+}
+
+/*---------- ---------- AMD / USD ---------- ----------*/
+.obj_totalcost{
+  padding-top: 6px;
+}
+
+.totalcost-item:first-child {
+  margin-bottom: 6px;
+  border-bottom: 1px solid silver;
+  line-height: 24px;
+}
+
+/*---------- ========== Media Queris ========== ----------*/
+@media (max-width: 768px) {
+
+  body {
+    padding: 4px;
+  }
+
+  .calculator {
+    padding: 10px;
+  }
+
+  .input-section button,
+  .item-list li button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 374px) {
+  .flexsection {
+    flex-direction: column
+  }
+}
