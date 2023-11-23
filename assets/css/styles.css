@@ -1,7 +1,5 @@
 /*----========--------======== GOOGLE FONTS ========--------========----*/
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap'); /*font-family: 'Zen Dots', sans-serif;*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@200;300;400&display=swap'); /*font-family: 'Noto Sans Armenian', sans-serif;*/
-
 
 /*----========--------======== BASE ========--------========----*/
 *, *::before, *::after {
@@ -9,8 +7,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* html {font-family: "Inter", sans-serif;} */
 
 ul {
   margin: 0;
@@ -137,14 +133,13 @@ body {
 }
 
 .helper {
-  display: none; /* По умолчанию скрываем текст помощи */
+  display: none; 
 }
 
 .show-helper {
-  display: block; /* Показываем текст помощи при активации */
+  display: block; 
 }
 
-/* Добавьте стили для кнопки закрытия (когда помощь отображается) */
 .close-helper {
   font-style: normal;
   cursor: pointer;
@@ -194,7 +189,6 @@ h1 {
 .input-section input,
 .input-section button {
   width: 100%;
-  /* margin-bottom: 10px; */
 }
 
 /*---------- ---------- Label and Input ---------- ----------*/
@@ -210,11 +204,11 @@ label{
 
 .input_style {
   padding-left: 8px;
-  border: 1px solid #cccccc;      /* цвет рамки */
-  border-radius: 0 3px 3px 3px;     /* закругление углов */
-  background: #ffffff !important; /* фоновый цвет */
-  outline: none;                    /* удаляет обводку в браузерах хром и сафари */
-  height: 32px;                     /* высота на свое усмотрение */
+  border: 1px solid #cccccc;  
+  border-radius: 0 3px 3px 3px; 
+  background: #ffffff !important;
+  outline: none;
+  height: 32px; 
   font-size: .95rem;
   color: rgb(70, 70, 70);
 
@@ -234,10 +228,10 @@ label{
   height: auto;
   padding: 6px 8px 6px 6px;
 
-  border: 1px solid #cccccc;      /* цвет рамки */
-  border-radius: 0 3px 3px 3px;     /* закругление углов */
-  background: #ffffff !important; /* фоновый цвет */
-  outline: none;                    /* удаляет обводку в браузерах хром и сафари */
+  border: 1px solid #cccccc;
+  border-radius: 0 3px 3px 3px;
+  background: #ffffff !important; 
+  outline: none; 
   color: rgb(70, 70, 70);
 
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
@@ -256,16 +250,16 @@ label{
 }
 
 .flex-item {
-  flex: 1; /* равномерное распределение пространства между flex-items */
+  flex: 1;
 }
 
 .flex-price {
-  flex: 2; /* первый элемент будет занимать 2/4 или 50% пространства */
+  flex: 2;
 }
 
 .flex-type,
 .flex-usdrate {
-  flex: 0.9; /* второй и третий элементы будут занимать по 1/4 или 25% пространства каждый */
+  flex: 0.9;
 }
 
 .flex-item label {
@@ -273,13 +267,12 @@ label{
 }
 
 .flex-usdrate label {
-  /* text-overflow: ellipsis; */
   text-wrap: nowrap;
 }
 
 .flex-item .input_style {
   margin: 0;
-  width: 100%; /* ширина input будет равной ширине блока, который его содержит */
+  width: 100%;
 }
 
 
@@ -368,16 +361,7 @@ label{
   justify-content: flex-start;
   margin: 8px 0;
   padding: 6px 0;
-    /* border-top: 1px solid #239262;
-    border-bottom: 1px solid #239262; */
-  /* gap: 6px; */
 }
-/* 
-.amount .amount-item {
-  padding: 3px;
-  border: 2px solid #acacac;
-  border-radius: 6px;
-} */
 
 .amount .amount-item:first-child {
   padding-right: 20px;
@@ -401,11 +385,6 @@ label{
 .comment {
   margin: 8px 0;
   padding: 6px 0;
-  /* padding: 6px 8px; */
-  /* background-color: #cccccc82; */
-    /* border-top: 1px solid #239262;
-    border-bottom: 1px solid #239262; */
-  /* border-radius: 4px; */
 }
 
 /*---------- ---------- Edit Button ---------- ----------*/
