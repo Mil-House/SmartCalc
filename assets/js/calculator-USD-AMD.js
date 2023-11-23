@@ -227,13 +227,17 @@ document.getElementById("usdRate").value = usdRate || '400';
 
 // Обработчик изменения курса USD
 document.getElementById("usdRate").addEventListener('input', function() {
+  const inputValue = this.value.trim();
 
-  // Установить значение usdRate введенным значением
-  usdRate = parseFloat(inputValue) || null;
-  displayItems();
-  calculateTotalCost(); // При изменении курса вызываем пересчет общей стоимости
+  if (inputValue.length >= 3 && inputValue <= 550 && !isNaN(parseFloat(inputValue))) {
+    // Установить значение usdRate введенным значением
+    usdRate = parseFloat(inputValue);
+    displayItems();
+    calculateTotalCost(); // При изменении курса вызываем пересчет общей стоимости
+  }
 });
 
+// Обработчик изменения курса USD (проверка при завершении ввода)
 document.getElementById("usdRate").addEventListener('change', function() {
   const inputValue = this.value.trim();
 
@@ -241,6 +245,11 @@ document.getElementById("usdRate").addEventListener('change', function() {
     // Показать предупреждение, если введено менее трех цифр или значение не является числом
     alert("Пожалуйста, введите корректный курс USD, содержащий не менее трех цифр.");
     this.value = "400"; // By Default 400
+  } else {
+    // Установить значение usdRate введенным значением
+    usdRate = parseFloat(inputValue);
+    displayItems();
+    calculateTotalCost(); // При изменении курса вызываем пересчет общей стоимости
   }
 });
 
@@ -259,7 +268,6 @@ window.addEventListener('beforeunload', function(event) {
 
 /*----========--------======== HELPER ========--------========----*/
 document.addEventListener('DOMContentLoaded', function() {
-  // const navHelp = document.querySelector('.nav-help');
   const helperBtn = document.querySelector('.helper-btn');
   const helperText = document.querySelector('.helper');
 
