@@ -65,28 +65,28 @@ function displayItems() {
       </div> 
 
       <div class="amount">
-        <div class="amount-item"><span class="obj_options">Количество:</span> 
+        <div class="amount-item"><span class="obj_options">Քանակ:</span> 
         <span class="obj_nums">${item.quantity}</span></div>
 
-        <div class="amount-item"><span class="obj_options">Цена за 1 шт.:</span> 
+        <div class="amount-item"><span class="obj_options">Գին AMD:</span> 
         <span class="obj_nums">${itemTotalCost.selectedPrice}֏</span></div>
       </div>
 
       <div class="max_price">
-        <div class="price-item"><span class="obj_options">Общая стоимость объекта AMD:</span> 
+        <div class="price-item"><span class="obj_options">Ընդհանուր արժեքը AMD:</span> 
         <span class="obj_nums">${itemTotalCost.dram}֏</span></div>
 
-        <div class="price-item"><span class="obj_options">Общая стоимость объекта USD:</span>
+        <div class="price-item"><span class="obj_options">Ընդհանուր արժեքը USD:</span>
         <span class="obj_nums">${usdRate ? ` ${itemTotalCost.usd}$` : ''}</span></div>
       </div>
 
       <div class="comment">
-        <span class="obj_options">Комментарий:</span> ${item.comment}
+        <span class="obj_options">Մեկնաբանություն:</span> ${item.comment}
       </div>
 
       <div class="obj_btns">
-      <button onclick="editItem(${index})">Редактировать</button>
-      <button onclick="deleteItem(${index})">Удалить</button>
+      <button onclick="editItem(${index})">Խմբագրել</button>
+      <button onclick="deleteItem(${index})">Ջնջել</button>
       </div>
     `;
     }
@@ -97,28 +97,28 @@ function displayItems() {
       </div> 
 
       <div class="amount">
-        <div class="amount-item"><span class="obj_options">Количество:</span> 
+        <div class="amount-item"><span class="obj_options">Քանակ:</span> 
         <span class="obj_nums">${item.quantity}</span></div>
 
-        <div class="amount-item"><span class="obj_options">Цена за 1 шт.:</span> 
+        <div class="amount-item"><span class="obj_options">Գին USD:</span> 
         <span class="obj_nums">${itemTotalCost.selectedPrice}$</span></div>
       </div>
 
       <div class="max_price">
-        <div class="price-item"><span class="obj_options">Общая стоимость объекта USD:</span> 
+        <div class="price-item"><span class="obj_options">Ընդհանուր արժեքը USD:</span> 
         <span class="obj_nums">${itemTotalCost.usd}$</span></div>
 
-        <div class="price-item"><span class="obj_options">Общая стоимость объекта AMD:</span>
+        <div class="price-item"><span class="obj_options">Ընդհանուր արժեքը AMD:</span>
         <span class="obj_nums">${usdRate ? ` ${itemTotalCost.dram}֏` : ''}</span></div>
       </div>
 
       <div class="comment">
-        <span class="obj_options">Комментарий:</span> ${item.comment}
+        <span class="obj_options">Մեկնաբանություն:</span> ${item.comment}
       </div>
 
       <div class="obj_btns">
-      <button onclick="editItem(${index})">Редактировать</button>
-      <button onclick="deleteItem(${index})">Удалить</button>
+      <button onclick="editItem(${index})">Խմբագրել</button>
+      <button onclick="deleteItem(${index})">Ջնջել</button>
       </div>
     `;  
     }
