@@ -418,14 +418,31 @@ label{
 .item-list li button {
   padding: 5px 10px;
   border: none;
-  background-color: #f44336;
-  color: white;
-  cursor: pointer;
+  color: #ffffff;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.item-list li button:hover {
+/*---- Delete and Reduct Buttons Styles ----*/
+.item-list li button:first-child,
+.item-list li button:last-child{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 5px -3px, rgba(0, 0, 0, 0.2) 0px -2px 0px inset;
+}
+
+.item-list li button:last-child{
+  background-color: #f44336;
+}
+
+.item-list li button:last-child:hover{
   background-color: #e53935;
+}
+
+.item-list li button:first-child{
+  background-color: #3555e5;
+}
+
+.item-list li button:first-child:hover {
+  background-color: #2d48be;
 }
 
 /*---------- ---------- Total Cost/Digit ---------- ----------*/
