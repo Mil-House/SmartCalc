@@ -331,6 +331,12 @@ label{
   font-weight: bold;
 }
 
+/*---------- ---------- Object Container Styles ---------- ----------*/
+#itemList {
+  border-radius: 5px;
+  background: #ffffff;
+}
+
 /*---------- ---------- Object View Styles ---------- ----------*/
 .item-list li {
   box-shadow: 
